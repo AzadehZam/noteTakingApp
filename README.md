@@ -94,5 +94,5 @@ This project is open-source and available under the **MIT License**.
 
 ---
 
-Made with ❤️ by [Your Name](https://github.com/your-username) 🚀
+Made with ❤️ by [Azadeh Zamanipour](https://github.com/AzadehZam) 🚀
 
