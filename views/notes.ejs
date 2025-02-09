@@ -1,0 +1,53 @@
+<!-- Bootstrap Styles -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+<div class="container mt-5">
+    <!-- Welcome Message & Logout Button -->
+    <div class="d-flex justify-content-between align-items-center mb-4">
+        <h1>Welcome, <%= user.username %>!</h1>
+        <form action="/logout" method="get">
+            <button type="submit" class="btn btn-danger">Logout</button>
+        </form>
+    </div>
+
+    <!-- Add New Note Form -->
+    <div class="card p-4 shadow-sm">
+        <h2 class="mb-3">Your Notes</h2>
+        <form action="/notes" method="post">
+            <div class="mb-3">
+                <label for="title" class="form-label">Title</label>
+                <input type="text" name="title" id="title" class="form-control" placeholder="Enter note title" required>
+            </div>
+            <div class="mb-3">
+                <label for="content" class="form-label">Content</label>
+                <textarea name="content" id="content" class="form-control" placeholder="Enter note content" rows="3" required></textarea>
+            </div>
+            <button type="submit" class="btn btn-success w-100">Add Note</button>
+        </form>
+    </div>
+
+    <!-- Notes List -->
+    <div class="mt-4">
+        <ul class="list-group">
+            <% notes.forEach(note => { %>
+                <li class="list-group-item d-flex justify-content-between align-items-center">
+                    <div>
+                        <h5 class="mb-1"><%= note.title %></h5>
+                        <p class="mb-1"><%= note.content %></p>
+                    </div>
+                    <div class="d-flex gap-2">
+                        <!-- Edit Button (Button instead of link for consistent sizing) -->
+                        <form action="/notes/edit/<%= note._id %>" method="get">
+                            <button type="submit" class="btn btn-outline-primary btn-sm w-100">Edit</button>
+                        </form>
+                        
+                        <!-- Delete Button -->
+                        <form action="/notes/delete/<%= note._id %>" method="post">
+                            <button type="submit" class="btn btn-outline-danger btn-sm w-100">Delete</button>
+                        </form>
+                    </div>
+                </li>
+            <% }) %>
+        </ul>
+    </div>    
+</div>
