@@ -34,18 +34,12 @@ A simple Note-Taking web application built using **Node.js**, **Express.js**, **
    ```bash
    npm install
    ```
-3. **Set Up Environment Variables**
-   Create a `.env` file in the root directory and add:
-   ```env
-   PORT=3000
-   MONGO_URI=mongodb://localhost:27017/note-taking-app
-   SESSION_SECRET=your_secret_key
-   ```
-4. **Start MongoDB** (if running locally)
+
+3. **Start MongoDB** (if running locally)
    ```bash
    mongod
    ```
-5. **Run the Application**
+4. **Run the Application**
    ```bash
    node server.js
    ```
@@ -53,7 +47,7 @@ A simple Note-Taking web application built using **Node.js**, **Express.js**, **
    ```bash
    npx nodemon server.js
    ```
-6. Open your browser and go to:
+5. Open your browser and go to:
    ```
    http://localhost:3000
    ```
@@ -83,11 +77,7 @@ A simple Note-Taking web application built using **Node.js**, **Express.js**, **
 │-- 📄 README.md     # Project documentation
 ```
 
-## Future Enhancements
-- Add **edit** functionality for notes
-- Implement **OAuth authentication** (Google, GitHub, etc.)
-- Improve UI styling with Bootstrap
-- Add **unit tests** using Jest
+
 
 ## License
 This project is open-source and available under the **MIT License**.
